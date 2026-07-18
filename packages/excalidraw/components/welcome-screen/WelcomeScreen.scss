@@ -127,7 +127,7 @@
   .welcome-screen-center {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -141,14 +141,16 @@
   .welcome-screen-center__logo {
     display: flex;
     align-items: center;
-    column-gap: 0.75rem;
-    font-size: 2.25rem;
+    column-gap: 1rem;
+    font-size: 3rem;
   }
 
   .welcome-screen-center__heading {
-    font-size: 1.125rem;
+    font-size: 1rem;
     text-align: center;
-    line-height: 1.35rem;
+    line-height: 1.6;
+    color: var(--color-gray-60);
+    max-width: 360px;
   }
 
   .welcome-screen-menu {
@@ -164,24 +166,27 @@
 
     pointer-events: var(--ui-pointerEvents);
 
-    color: var(--color-gray-50);
-    font-size: 0.875rem;
+    color: var(--color-gray-60);
+    font-size: 0.9rem;
+    font-weight: 500;
 
     width: 100%;
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 280px;
+    max-width: 360px;
     display: grid;
     align-items: center;
     justify-content: space-between;
 
-    background: none;
-    border: 1px solid transparent;
+    background: var(--island-bg-color);
+    border: 1px solid var(--color-surface-high);
 
-    padding: 0.75rem;
+    padding: 0.875rem 1rem;
 
-    border-radius: var(--border-radius-md);
+    border-radius: var(--border-radius-lg);
 
     grid-template-columns: calc(var(--default-icon-size) + 0.5rem) 1fr 3rem;
+
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 
     &__text {
       display: flex;

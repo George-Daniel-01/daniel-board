@@ -284,7 +284,7 @@ export default function ExampleApp({
   };
 
   const loadSceneOrLibrary = async () => {
-    const file = await fileOpen({ description: "Excalidraw or library file" });
+    const file = await fileOpen({ description: "Daniel Board or library file" });
     const contents = await loadSceneOrLibraryFromBlob(file, null, null);
     if (contents.type === MIME_TYPES.excalidraw) {
       excalidrawAPI?.updateScene(contents.data as any);
@@ -622,7 +622,7 @@ export default function ExampleApp({
           isCollaborating={isCollaborating}
           onSelect={() => window.alert("You clicked on collab button")}
         />
-        <MainMenu.Group title="Excalidraw links">
+        <MainMenu.Group title="Daniel Board links">
           <MainMenu.DefaultItems.Socials />
         </MainMenu.Group>
         <MainMenu.Separator />

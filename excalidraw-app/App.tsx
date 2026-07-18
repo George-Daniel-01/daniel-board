@@ -40,12 +40,10 @@ import { t } from "@excalidraw/excalidraw/i18n";
 import {
   GithubIcon,
   XBrandIcon,
-  DiscordIcon,
   ExcalLogo,
   usersIcon,
   exportToPlus,
   share,
-  youtubeIcon,
 } from "@excalidraw/excalidraw/components/icons";
 import { isElementLink } from "@excalidraw/element";
 import {
@@ -862,7 +860,7 @@ const ExcalidrawWrapper = () => {
   }
 
   const ExcalidrawPlusCommand = {
-    label: "Excalidraw+",
+    label: "Daniel Board+",
     category: DEFAULT_CATEGORIES.links,
     predicate: true,
     icon: <div style={{ width: 14 }}>{ExcalLogo}</div>,
@@ -953,28 +951,7 @@ const ExcalidrawWrapper = () => {
         theme={editorTheme}
         onThemeChange={setAppTheme}
         renderTopRightUI={(isMobile) => {
-          if (isMobile || !collabAPI || isCollabDisabled) {
-            return null;
-          }
-
-          return (
-            <div className="excalidraw-ui-top-right">
-              {excalidrawAPI?.getEditorInterface().formFactor === "desktop" && (
-                <ExcalidrawPlusPromoBanner
-                  isSignedIn={isExcalidrawPlusSignedUser}
-                />
-              )}
-
-              {collabError.message && <CollabError collabError={collabError} />}
-              <LiveCollaborationTrigger
-                isCollaborating={isCollaborating}
-                onSelect={() =>
-                  setShareDialogState({ isOpen: true, type: "share" })
-                }
-                editorInterface={editorInterface}
-              />
-            </div>
-          );
+          return null;
         }}
         onLinkOpen={(element, event) => {
           if (element.link && isElementLink(element.link)) {
@@ -1147,7 +1124,7 @@ const ExcalidrawWrapper = () => {
               ],
               perform: () => {
                 window.open(
-                  "https://github.com/excalidraw/excalidraw",
+                  "https://github.com/George-Daniel-01",
                   "_blank",
                   "noopener noreferrer",
                 );
@@ -1161,46 +1138,7 @@ const ExcalidrawWrapper = () => {
               keywords: ["twitter", "contact", "social", "community"],
               perform: () => {
                 window.open(
-                  "https://x.com/excalidraw",
-                  "_blank",
-                  "noopener noreferrer",
-                );
-              },
-            },
-            {
-              label: t("labels.discordChat"),
-              category: DEFAULT_CATEGORIES.links,
-              predicate: true,
-              icon: DiscordIcon,
-              keywords: [
-                "chat",
-                "talk",
-                "contact",
-                "bugs",
-                "requests",
-                "report",
-                "feedback",
-                "suggestions",
-                "social",
-                "community",
-              ],
-              perform: () => {
-                window.open(
-                  "https://discord.gg/UexuTaE",
-                  "_blank",
-                  "noopener noreferrer",
-                );
-              },
-            },
-            {
-              label: "YouTube",
-              icon: youtubeIcon,
-              category: DEFAULT_CATEGORIES.links,
-              predicate: true,
-              keywords: ["features", "tutorials", "howto", "help", "community"],
-              perform: () => {
-                window.open(
-                  "https://youtube.com/@excalidraw",
+                  "https://x.com/Georgedamiel",
                   "_blank",
                   "noopener noreferrer",
                 );
@@ -1210,28 +1148,11 @@ const ExcalidrawWrapper = () => {
               ? [
                   {
                     ...ExcalidrawPlusAppCommand,
-                    label: "Sign in / Go to Excalidraw+",
+                    label: "Go to Daniel Board+",
                   },
                 ]
-              : [ExcalidrawPlusCommand, ExcalidrawPlusAppCommand]),
+              : []),
 
-            {
-              label: t("overwriteConfirm.action.excalidrawPlus.button"),
-              category: DEFAULT_CATEGORIES.export,
-              icon: exportToPlus,
-              predicate: true,
-              keywords: ["plus", "export", "save", "backup"],
-              perform: () => {
-                if (excalidrawAPI) {
-                  exportToExcalidrawPlus(
-                    excalidrawAPI.getSceneElements(),
-                    excalidrawAPI.getAppState(),
-                    excalidrawAPI.getFiles(),
-                    excalidrawAPI.getName(),
-                  );
-                }
-              },
-            },
             {
               label: t("labels.installPWA"),
               category: DEFAULT_CATEGORIES.app,

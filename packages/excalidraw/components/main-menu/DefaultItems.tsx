@@ -41,7 +41,6 @@ import DropdownMenuItemLink from "../dropdownMenu/DropdownMenuItemLink";
 import DropdownMenuSub from "../dropdownMenu/DropdownMenuSub";
 import {
   GithubIcon,
-  DiscordIcon,
   XBrandIcon,
   settingsIcon,
   emptyIcon,
@@ -373,24 +372,17 @@ export const Socials = () => {
     <>
       <DropdownMenuItemLink
         icon={GithubIcon}
-        href="https://github.com/excalidraw/excalidraw"
+        href="https://github.com/George-Daniel-01"
         aria-label="GitHub"
       >
         GitHub
       </DropdownMenuItemLink>
       <DropdownMenuItemLink
         icon={XBrandIcon}
-        href="https://x.com/excalidraw"
+        href="https://x.com/Georgedamiel"
         aria-label="X"
       >
         {t("labels.followUs")}
-      </DropdownMenuItemLink>
-      <DropdownMenuItemLink
-        icon={DiscordIcon}
-        href="https://discord.gg/UexuTaE"
-        aria-label="Discord"
-      >
-        {t("labels.discordChat")}
       </DropdownMenuItemLink>
     </>
   );

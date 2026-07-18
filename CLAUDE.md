@@ -2,11 +2,11 @@
 
 ## Project Structure
 
-Excalidraw is a **monorepo** with a clear separation between the core library and the application:
+Daniel Board is a **monorepo** with a clear separation between the core library and the application:
 
-- **`packages/excalidraw/`** - Main React component library published to npm as `@excalidraw/excalidraw`
-- **`excalidraw-app/`** - Full-featured web application (excalidraw.com) that uses the library
-- **`packages/`** - Core packages: `@excalidraw/common`, `@excalidraw/element`, `@excalidraw/math`, `@excalidraw/utils`
+- **`packages/excalidraw/`** - Main React component library
+- **`excalidraw-app/`** - Full-featured web application (daniel-board.vercel.app) that uses the library
+- **`packages/`** - Core packages: common, element, math, utils
 - **`examples/`** - Integration examples (NextJS, browser script)
 
 ## Development Workflow
